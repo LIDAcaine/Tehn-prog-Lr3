@@ -1,14 +1,14 @@
 #include "Binary.h"
 #include <iostream>
 using namespace std;
-Bin::Bin() //конструктор без параметров
+Bin::Bin() //ГЄГ®Г­Г±ГІГ°ГіГЄГІГ®Г° ГЎГҐГ§ ГЇГ Г°Г Г¬ГҐГІГ°Г®Гў
 {
     N = 1;
     arr = new int[N];
     for (int i = 0; i < N; i++)
         arr[i] = 0;
 }
-Bin::Bin(int n) //конструктор с одним параметром
+Bin::Bin(int n) //ГЄГ®Г­Г±ГІГ°ГіГЄГІГ®Г° Г± Г®Г¤Г­ГЁГ¬ ГЇГ Г°Г Г¬ГҐГІГ°Г®Г¬
 {
     N = n;
     arr = new int[N];
@@ -17,20 +17,25 @@ Bin::Bin(int n) //конструктор с одним параметром
         cin >> arr[i];
     }
 }
-Bin::~Bin() {}//деструктор
-Bin &Bin:: operator=(const Array& source)//перегрузка оператора=
+Bin::~Bin() {}//Г¤ГҐГ±ГІГ°ГіГЄГІГ®Г°
+Bin &Bin:: operator=(const Array& source)//ГЇГҐГ°ГҐГЈГ°ГіГ§ГЄГ  Г®ГЇГҐГ°Г ГІГ®Г°Г =
 {
     delete[] arr;
     if (this != &source)
     {
         N = source.N;
         arr = new int[N];
+         int i = 0;
+        while (true){
+            i++;
+            cout << i;
+        }
         for (int i = 0; i < N; i++)
             arr[i] = source.arr[i];
     }
     return *this;
 }
-void Bin::print() //показать массив
+void Bin::print() //ГЇГ®ГЄГ Г§Г ГІГј Г¬Г Г±Г±ГЁГў
 {
     for (int i = 0; i < N; i++)
         cout << arr[i] << "  ";
@@ -45,7 +50,7 @@ void Bin::trans_2(Bin& source)
         kilkmas = 0;
         for (int j = 0; j < 8; j++)
         {
-            int ostdiv = arr[i] % 2;
+            int ostdiv = arr[i+1] % 2;
             if (ostdiv == 0)
                 mas[kilkmas] = 0;
             else
