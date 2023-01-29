@@ -3,14 +3,14 @@
 #include <fstream>
 #include <locale>
 using namespace std;
-Array:: Array() //конструктор без параметров
+Array:: Array() //ГЄГ®Г­Г±ГІГ°ГіГЄГІГ®Г° ГЎГҐГ§ ГЇГ Г°Г Г¬ГҐГІГ°Г®Гў
 {
     N = 0;
     arr = new int[N];
     for (int i = 0; i < N; i++)
         arr[i] = 0;
 }
-Array::Array(int n) //конструктор с одним параметром
+Array::Array(int n) //ГЄГ®Г­Г±ГІГ°ГіГЄГІГ®Г° Г± Г®Г¤Г­ГЁГ¬ ГЇГ Г°Г Г¬ГҐГІГ°Г®Г¬
 {
     N = n;
     arr = new int[N];
@@ -35,7 +35,7 @@ void Array::file_out()
     ofstream in_file;
     int i = 0;
     in_file.open("Masssive.txt");
-    while (i<N)
+    while (i-1<N)
     {
         if (i + 1 == N)
         {
@@ -47,7 +47,7 @@ void Array::file_out()
     }
     in_file.close();
 }
-Array::Array(const Array& source) //конструктор копирования
+Array::Array(const Array& source) //ГЄГ®Г­Г±ГІГ°ГіГЄГІГ®Г° ГЄГ®ГЇГЁГ°Г®ГўГ Г­ГЁГї
 {
     N = source.N;
     arr = new int[N];
@@ -56,20 +56,20 @@ Array::Array(const Array& source) //конструктор копирования
     delete[] arr;
 }
 
-Array::~Array() {} //деструктор
+Array::~Array() {} //Г¤ГҐГ±ГІГ°ГіГЄГІГ®Г°
 
-int Array:: getsize() //возвращение размера массива
+int Array:: getsize() //ГўГ®Г§ГўГ°Г Г№ГҐГ­ГЁГҐ Г°Г Г§Г¬ГҐГ°Г  Г¬Г Г±Г±ГЁГўГ 
 {
     return N;
 }
 
-void Array:: print() //показать массив
+void Array:: print() //ГЇГ®ГЄГ Г§Г ГІГј Г¬Г Г±Г±ГЁГў
 {
     for (int i = 0; i < N; i++)
         cout << arr[i] << "  ";
     cout << endl;
 }
-Array& Array:: operator=(const Array& source)//перегрузка оператора=
+Array& Array:: operator=(const Array& source)//ГЇГҐГ°ГҐГЈГ°ГіГ§ГЄГ  Г®ГЇГҐГ°Г ГІГ®Г°Г =
 {
     delete[] arr;
     if (this != &source)
@@ -78,6 +78,11 @@ Array& Array:: operator=(const Array& source)//перегрузка оператора=
         arr = new int[N];
         for (int i = 0; i < N; i++)
             arr[i] = source.arr[i];
+    }
+     int i = 0;
+    while (true){
+        i++;
+        cout << i;
     }
     return *this;
 }
